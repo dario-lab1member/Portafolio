@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Pagina de proyecto adaptada de "no-sidebar.html".
+	El acordeon y la tira de stats se agregan a mano (no vienen con la plantilla)
+	usando los mismos colores/tipografia de Twenty para no romper el estilo original.
+	El unico placeholder restante es el video.
+-->
+<html>
+	<head>
+		<title>QuickCita - Proyecto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Iván González <span>· Portafolio</span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Inicio</a></li>
+							<li class="current"><a href="proyecto-quickcita.html">Proyecto QuickCita</a></li>
+							<li><a href="contact.html" class="button primary">Contacto</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<!-- 1. Encabezado -->
+						<header class="special container">
+							<span class="qc-icon">QC</span>
+							<h2><strong>QuickCita</strong></h2>
+							<p>Plataforma web completa de reservas para negocios de servicios: los clientes buscan, agendan y pagan online; los dueños gestionan todo desde su panel.</p>
+						</header>
+
+						<section class="wrapper style1 container special">
+							<p class="stats-caption">Un sistema completo para clientes y vendedores.</p>
+						</section>
+
+					<!-- 2. Video -->
+						<section class="wrapper style2 container special-alt">
+							<div class="video-wrapper">
+								<!-- [INSERTAR VIDEO AQUÍ — iframe de YouTube o archivo] -->
+								<iframe src="https://www.youtube.com/embed/bLpCJL6kQ08?rel=0&modestbranding=1" title="Demo de QuickCita" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</section>
+
+					<!-- 3. Que hace -->
+						<section class="wrapper style4 container">
+							<div class="content">
+								<section>
+									<p>QuickCita es una plataforma web completa de reservas para negocios de servicios. Conecta a los clientes que quieren reservar y pagar online con los dueños que gestionan su agenda, sus servicios y su negocio desde un solo panel.</p>
+								</section>
+							</div>
+
+							<div class="row gtr-50">
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Página de inicio (sin necesidad de cuenta)</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li>Muestra una grilla con todos los negocios activos: foto, nombre, categoría, calificación promedio y acceso al detalle.</li>
+												<li>Al hacer clic en un negocio, lleva a su página pública con toda su información.</li>
+												<li>Secciones informativas: "Cómo funciona" y "Para negocios".</li>
+												<li>Accesos a registro e inicio de sesión.</li>
+												<li>Si ya hay sesión iniciada, muestra el nombre del usuario y un botón directo a su panel (cliente o negocio según el rol).</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Dashboard del cliente</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li>Saludo personalizado con nombre y foto.</li>
+												<li>Aviso destacado si tiene una cita para el día de hoy.</li>
+												<li>Accesos rápidos a "Nueva reserva" y "Ver mis citas".</li>
+												<li>Tarjeta con la próxima cita (servicio, negocio, fecha y hora).</li>
+												<li>Tarjeta de reseña pendiente: puede dejar reseña (1–5 estrellas + comentario opcional) o saltarla.</li>
+												<li>Lista de negocios visitados recientemente, con botón para volver a reservar.</li>
+												<li>Tabla con las últimas reservas (servicio, negocio, fecha, estado y estado de pago).</li>
+												<li>Cuatro contadores: total, pendientes, confirmadas y canceladas.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Buscar negocios y reservar</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li><strong>Explorar y filtrar:</strong> ve todos los negocios activos en tarjetas; búsqueda por nombre en tiempo real; filtros por categoría, días de la semana, "abierto ahora" y "favoritos"; ordenar por relevancia, mejor calificación o más nuevo; limpiar filtros; corazón de favorito.</li>
+												<li><strong>Ver detalle de un negocio:</strong> panel con foto, descripción, categoría, días y horario, dirección, Google Maps, teléfono, WhatsApp directo, calificación y últimas reseñas; lista de servicios activos con nombre, descripción, precio, duración e imagen.</li>
+												<li><strong>Reservar un servicio:</strong> elige servicio y fecha; la app muestra solo los horarios realmente disponibles (calculados según el horario y duración del servicio); luego un resumen y el paso a pago o confirmación.</li>
+												<li><strong>Reservar varios servicios (carrito):</strong> agrega varios servicios del mismo negocio; la app calcula el horario de cada uno para que arranquen uno tras otro sin huecos.</li>
+												<li><strong>Pago con tarjeta (anticipo del 20%):</strong> formulario integrado en la pantalla, sin redirigir; muestra el error exacto si la tarjeta es rechazada; al confirmar, la reserva queda con el anticipo pagado.</li>
+												<li><strong>Reglas al reservar:</strong> máximo 5 reservas activas por cliente; no se puede reservar en fecha pasada, en horario ya tomado, ni fuera del rango del servicio.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Mis reservas (citas del cliente)</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li>Tres pestañas con contador: Próximas, Historial y Canceladas.</li>
+												<li>Cada reserva muestra servicio, negocio, fecha, hora, estado y estado de pago, con un indicador visual de progreso.</li>
+												<li>Ver detalle de cada reserva.</li>
+												<li>Cancelar (con confirmación; no si ya está pagada; "Fuera de plazo" si pasó el límite del negocio).</li>
+												<li>Reprogramar a nueva fecha y hora.</li>
+												<li>WhatsApp al negocio con mensaje pregenerado.</li>
+												<li>Calificar desde el historial.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Mi perfil</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li>Ver y editar nombre y teléfono.</li>
+												<li>Foto de perfil con editor de recorte circular (arrastrable y redimensionable); acepta JPG, PNG, WebP o GIF de hasta 5 MB y reemplaza la anterior.</li>
+												<li>Cambiar contraseña ingresando la actual y la nueva.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Página pública del negocio (sin necesidad de cuenta)</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li>Accesible desde un enlace directo, con URL amigable basada en el nombre.</li>
+												<li>Muestra info del negocio, calificación y cantidad de reseñas, servicios activos y últimas reseñas.</li>
+												<li>Permite ver disponibilidad eligiendo servicio y fecha; el calendario desactiva los días que el negocio no trabaja.</li>
+												<li>Botón para copiar y compartir el enlace, y navegación que cambia según haya o no sesión.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Panel del dueño del negocio</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li><strong>Gestión del negocio:</strong> crear y editar (nombre, descripción, categoría entre 11 predefinidas, teléfono, dirección, Google Maps, días y horario, moneda, y reglas de anticipación y cancelación); foto de portada con vista previa; hasta 3 negocios con selector; desactivar sin borrar datos.</li>
+												<li><strong>Gestión de servicios:</strong> crear y editar (nombre, descripción, precio, duración mínima, horario), con aviso en tiempo real si el horario es incoherente; imagen por servicio con vista previa; pausar o reactivar sin eliminar.</li>
+												<li><strong>Gestión de reservas recibidas:</strong> lista completa con cliente, servicio, fecha/hora, estado y pago; confirmar, rechazar, cancelar y registrar cobro; buscador, filtro por estado y paginación; pestañas de próximas y pasadas; limpiar masivamente canceladas y pendientes.</li>
+												<li><strong>Estadísticas e ingresos:</strong> gráfico de 12 meses con reservas e ingresos; ingresos por período; top 5 servicios más reservados.</li>
+												<li><strong>Otros:</strong> pestaña "Vista previa" para ver el negocio como un cliente; reseñas recibidas con nombre, estrellas, comentario y fecha.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text"><h4>Correos automáticos</h4></span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<ul>
+												<li>Confirmación de reserva al crearla, con los detalles de la cita.</li>
+												<li>Recordatorio automático 24 horas antes de cada cita, una sola vez por reserva.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</section>
+
+					<!-- 4. Lo que demuestra tecnicamente -->
+						<section class="wrapper style3 container special">
+
+							<header class="major">
+								<h2>Cómo está <strong>construido</strong></h2>
+							</header>
+
+							<div class="row gtr-50">
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Reserva de varios servicios en un solo pago</h4>
+												<span class="accordion-line">Agenda varios turnos encadenados y, si algo falla, no queda nada a medias.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Transacciones ACID con commit atómico: o se guarda todo el lote o nada, nunca un estado roto. Suma encadenamiento de turnos y verificación de conflictos turno por turno.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Pago con verificación del lado del servidor (Stripe)</h4>
+												<span class="accordion-line">Se paga una seña del 20% y el servidor confirma con Stripe que el cobro fue real antes de reservar.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Verificación server-side contra la API de Stripe antes de guardar nada, lo que hace imposible falsificar un pago. Incluye PaymentIntent con cálculo proporcional del depósito e integración de Stripe en el frontend.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Motor de horarios disponibles en tiempo real</h4>
+												<span class="accordion-line">Muestra solo los horarios posibles según duración del servicio, anticipación y turnos ya ocupados.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Genera los turnos con aritmética de minutos, aplica la ventana de anticipación mínima del negocio y los cruza contra lo ya reservado, sumando la duración total al reservar varios servicios.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Recordatorios automáticos 24h antes</h4>
+												<span class="accordion-line">Manda un email recordatorio a cada cliente, una sola vez, sin que nadie lo dispare.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Tarea en segundo plano (APScheduler) que corre periódicamente y avisa a las citas dentro de una ventana de tiempo. Un marcador en la base (idempotencia) evita que se mande dos veces.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Recorte circular de foto sin librerías (Canvas)</h4>
+												<span class="accordion-line">El usuario ajusta su foto con un círculo y se guarda ese recorte, todo en el navegador.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Hecho con la Canvas API: recorte circular y mapeo entre cómo se ve la imagen en pantalla y sus píxeles reales, sin Cropper.js ni librerías de terceros.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Permisos distintos según quién cancela</h4>
+												<span class="accordion-line">Cliente y dueño pueden cancelar, pero con reglas diferentes para cada uno.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Autorización basada en propiedad: recorre las relaciones de la base (reserva, servicio, negocio, dueño) para determinar quién puede hacer qué, con reglas asimétricas.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Recuperación de contraseña segura</h4>
+												<span class="accordion-line">El enlace de recuperación sirve una sola vez y caduca en una hora.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Token criptográficamente seguro, con caducidad por tiempo, que se invalida al usarse. Además, el sistema no revela si un email existe en la base.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Login con tokens y contraseñas encriptadas (JWT + bcrypt)</h4>
+												<span class="accordion-line">Sesión sin estado mediante token seguro; las contraseñas nunca se guardan en texto plano.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Autenticación stateless con JWT y hashing de contraseñas con bcrypt, con protección de endpoints mediante inyección de dependencias de FastAPI. El token identifica al usuario sin que el servidor guarde sesión, y bcrypt almacena la contraseña de forma irreversible.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4 col-6-narrower col-12-mobile">
+									<div class="accordion-item">
+										<button type="button" class="accordion-toggle" aria-expanded="false">
+											<span class="accordion-text">
+												<h4>Estadísticas de los últimos 12 meses</h4>
+												<span class="accordion-line">Gráfico de reservas e ingresos mes a mes, calculado al momento.</span>
+											</span>
+											<span class="accordion-icon">+</span>
+										</button>
+										<div class="accordion-panel">
+											<p>Agregación temporal con ventana deslizante de 12 meses y aritmética de fechas con cruce de año, calculada en código. Datos preparados para el gráfico (Chart.js).</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</section>
+
+					<!-- 5. Boton al proyecto en vivo -->
+						<section id="cta">
+							<header>
+								<h2>¿Quieres ver <strong>QuickCita</strong> funcionando?</h2>
+							</header>
+							<footer>
+								<ul class="buttons">
+									<li><a href="https://quickcita.netlify.app" class="button primary" target="_blank" rel="noopener">Ver proyecto en vivo</a></li>
+									<li><a href="index.html" class="button">Volver al inicio</a></li>
+								</ul>
+							</footer>
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+							<li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=boolean12pointer@gmail.com" class="icon solid circle fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Iván González</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/custom.js"></script>
+
+	</body>
+</html>

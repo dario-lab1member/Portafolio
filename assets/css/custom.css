@@ -1,0 +1,641 @@
+/*
+	Estilos a medida para el portafolio: tema "Monocromo elegante" (editorial,
+	alto contraste, fondo oscuro) con grano, profundidad y detalle dorado.
+	No vienen incluidos en la plantilla Twenty de HTML5 UP: se agregan aqui
+	y reutilizan las variables del tema (ver bloque :root) para que combinen
+	con el resto del sitio. No se toca assets/css/main.css.
+*/
+
+:root {
+	--bg-primary: #0F0F11;
+	--bg-secondary: #17171A;
+	--bg-elevated: #1F1F23;
+	--text-primary: #F5F4F0;
+	--text-secondary: #A0A0A6;
+	--border-color: #2A2A2F;
+	--accent: #C9A877;
+	--btn-bg: #F5F4F0;
+	--btn-text: #14110F;
+	--border-hover: #34343A;
+	/* Color real del logo de QuickCita (--primary en bookly/frontend/css/styles.css) */
+	--qc-purple: #7c3aed;
+}
+
+/* Icono de QuickCita: cuadrado morado con las iniciales "QC", mismo
+   color que --primary en bookly/frontend/css/styles.css. */
+.qc-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto 1.25rem auto;
+	border-radius: 24px;
+	background: var(--accent);
+	font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 2.6rem;
+	letter-spacing: 0;
+	color: var(--bg-primary);
+}
+
+/* ===========================================================
+   Fondo del body: un unico degradado sutil + grano
+   =========================================================== */
+
+body {
+	background-color: var(--bg-primary);
+	background-image: linear-gradient(180deg, #17171B 0%, #0F0F11 60%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.85'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+	background-repeat: repeat;
+	opacity: 0.04;
+	pointer-events: none;
+	z-index: 0;
+}
+
+#page-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+body, input, select, textarea {
+	color: var(--text-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--text-primary);
+}
+
+a {
+	color: var(--text-primary);
+	text-decoration: none;
+	border-bottom: 0;
+}
+
+a:hover {
+	color: var(--accent);
+}
+
+/* Subrayado animado solo en enlaces de prosa (no nav, no botones, no iconos) */
+#main a:not(.button):not(:has(.icon)),
+#footer .copyright a {
+	background-image: linear-gradient(var(--accent), var(--accent));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0% 1px;
+	transition: background-size 0.3s ease, color 0.2s ease;
+	padding-bottom: 2px;
+}
+
+#main a:not(.button):not(:has(.icon)):hover,
+#footer .copyright a:hover {
+	background-size: 100% 1px;
+}
+
+hr {
+	border-top-color: var(--border-color);
+}
+
+blockquote {
+	border-left-color: var(--border-color);
+}
+
+/* Etiqueta "eyebrow" (uso opcional: PROYECTO DESTACADO, etc.) */
+.eyebrow {
+	display: block;
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	margin-bottom: 0.75em;
+}
+
+/* Linea de acento dorada bajo los titulos de sección */
+header.major h2::after,
+header.special h2::after,
+#cta header h2::after,
+.row > div > section > header h3::after {
+	content: "";
+	display: block;
+	width: 48px;
+	height: 2px;
+	margin-top: 10px;
+	margin-bottom: 0;
+	background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+header.major h2::after,
+header.special h2::after,
+#cta header h2::after {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Tecnologías (index.html): el titulo "Tecnologías" y su linea van
+   centrados (las cards de la grilla, FRONTEND/BACKEND/etc., no se tocan). */
+#tecnologias header.major h2 {
+	text-align: center;
+}
+
+#tecnologias header.major h2::after {
+	margin: 10px auto 0 auto;
+}
+
+/* Encabezado QuickCita (proyecto-quickcita.html): el titulo esta centrado
+   (header.special tiene text-align:center por defecto), la linea debe
+   quedar centrada bajo el texto. */
+header.special h2::after {
+	margin: 10px auto 0 auto;
+}
+
+/* La plantilla Twenty dibuja sus propias lineas decorativas en el
+   CONTENEDOR del header (header.special:before/:after, ver main.css),
+   ancladas al recuadro y no al titulo: por eso no se movian al editar
+   el h2. Se desactivan aqui para que la unica linea visible sea la
+   del h2::after de arriba, ya centrada bajo "QuickCita". */
+header.special:before,
+header.special:after {
+	display: none;
+}
+
+/* "Cómo trabajo" y "Por qué trabajar conmigo" (index.html): ambas secciones
+   usan .wrapper.style3 y su clase "special" las centra (section.special en
+   main.css). El titulo de sección y, en "Cómo trabajo", los titulos de cada
+   tarjeta (h3 dentro de header) tambien quedan centrados por herencia de
+   text-align, asi que su linea debe ir centrada, no a la izquierda. */
+.wrapper.style3 header.major h2::after {
+	margin: 10px auto 0 auto;
+}
+
+.wrapper.style3 .row > div > section > header h3::after {
+	margin: 10px auto 0 auto;
+}
+
+/* Inputs / formularios */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+	background: var(--bg-secondary);
+	border-color: var(--border-color);
+	color: var(--text-primary);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	border-color: var(--accent);
+}
+
+::-webkit-input-placeholder { color: var(--text-secondary); }
+:-moz-placeholder { color: var(--text-secondary); }
+::-moz-placeholder { color: var(--text-secondary); }
+:-ms-input-placeholder { color: var(--text-secondary); }
+
+/* ===========================================================
+   Botones
+   =========================================================== */
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+	background: transparent;
+	border: solid 1px var(--border-color);
+	color: var(--text-primary);
+	transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover,
+.button:hover {
+	background: var(--bg-elevated);
+	border-color: var(--border-hover);
+	color: var(--text-primary);
+}
+
+/* El boton del acordeon (<button>) no es un boton outline: se excluye del estilo de arriba */
+.accordion-toggle,
+.accordion-toggle:hover {
+	background: none;
+	border: 0;
+	color: var(--text-primary);
+}
+
+input[type="button"].primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+button.primary,
+.button.primary {
+	background: var(--btn-bg);
+	border-color: var(--btn-bg);
+	color: var(--btn-text) !important;
+	box-shadow: 0 6px 20px rgba(245, 244, 240, 0.10);
+}
+
+input[type="button"].primary:hover,
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+	background: var(--btn-bg) !important;
+	border-color: var(--btn-bg) !important;
+	transform: translateY(-2px);
+	box-shadow: 0 10px 28px rgba(245, 244, 240, 0.18);
+}
+
+/* ===========================================================
+   Secciones / contenedores (bandas) — fondo elevado + hairlines
+   =========================================================== */
+
+.wrapper.style2,
+.wrapper.style3,
+.wrapper.style4 {
+	background-color: var(--bg-secondary);
+	border-top: solid 1px var(--border-color);
+	border-bottom: solid 1px var(--border-color);
+	color: var(--text-secondary);
+}
+
+/* ===========================================================
+   Tarjetas / superficies con profundidad (radius + sombra)
+   =========================================================== */
+
+.feature-card,
+.accordion-item,
+.video-wrapper,
+header.special,
+.row > div > section,
+.wrapper.style4 .content > section {
+	box-sizing: border-box;
+	background-color: var(--bg-secondary);
+	border: solid 1px var(--border-color);
+	border-radius: 10px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.row > div > section,
+.wrapper.style4 .content > section {
+	height: 100%;
+	padding: 1.75em 1.75em 0.25em 1.75em;
+}
+
+.feature-card,
+.accordion-item,
+.row > div > section {
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover,
+.accordion-item:hover,
+.row > div > section:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+	background-color: var(--bg-elevated);
+	border-color: var(--border-hover);
+}
+
+/* Video responsive 16:9 */
+.video-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding-bottom: 72.5%; /* proporcion real estimada del video (~1.38:1), no 16:9 */
+	overflow: hidden;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+@media screen and (min-width: 980px) {
+	.video-wrapper {
+		width: 112%;
+		margin-left: -6%;
+	}
+}
+
+/* Tira de datos destacada */
+.stats-strip {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1px;
+	background: var(--border-color);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 0 auto 1.5em auto;
+	max-width: 900px;
+	border: solid 1px var(--border-color);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.stats-strip .stat {
+	flex: 1 1 0;
+	min-width: 150px;
+	text-align: center;
+	padding: 1.5em 1em;
+	background: var(--bg-secondary);
+	color: var(--text-primary);
+}
+
+.stats-strip .stat:nth-child(even) {
+	background: var(--bg-elevated);
+}
+
+.stats-strip .stat .stat-number {
+	display: block;
+	font-size: 1.8em;
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--accent);
+}
+
+.stats-strip .stat .stat-label {
+	display: block;
+	font-size: 0.8em;
+	opacity: 0.9;
+}
+
+.stats-caption {
+	text-align: center;
+	font-style: italic;
+	color: var(--text-secondary);
+}
+
+@media screen and (max-width: 736px) {
+	.stats-strip .stat {
+		min-width: 45%;
+	}
+}
+
+/* ===========================================================
+   Acordeon
+   =========================================================== */
+
+.accordion-item {
+	margin-bottom: 1em;
+	overflow: hidden;
+	transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.accordion-item.is-open {
+	background-color: var(--bg-elevated);
+}
+
+.accordion-toggle {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	padding: 1em 1.25em;
+	font-family: inherit;
+}
+
+.accordion-toggle .accordion-text {
+	flex: 1 1 auto;
+}
+
+.accordion-toggle h4 {
+	margin: 0 0 0.25em 0;
+	font-size: 1.05em;
+	color: var(--text-primary);
+}
+
+.accordion-toggle .accordion-line {
+	display: block;
+	font-size: 0.9em;
+	color: var(--text-secondary);
+	margin: 0;
+}
+
+.accordion-toggle .accordion-icon {
+	flex: 0 0 auto;
+	width: 1.8em;
+	height: 1.8em;
+	line-height: 1.7em;
+	text-align: center;
+	border-radius: 50%;
+	background: transparent;
+	border: solid 1px var(--border-color);
+	color: var(--text-secondary);
+	margin-left: 1em;
+	transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+	font-weight: 700;
+}
+
+.accordion-item.is-open .accordion-icon {
+	transform: rotate(45deg); /* el "+" se convierte visualmente en "x" */
+	border-color: var(--accent);
+	color: var(--accent);
+}
+
+.accordion-panel {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+	padding: 0 1.25em;
+}
+
+.accordion-item.is-open .accordion-panel {
+	padding-bottom: 1.25em;
+}
+
+.accordion-panel p {
+	margin: 0;
+	color: var(--text-secondary);
+}
+
+.accordion-panel ul {
+	margin: 0;
+	padding-left: 1.25em;
+	color: var(--text-secondary);
+	list-style: disc;
+}
+
+.accordion-panel ul li {
+	margin-bottom: 0.5em;
+}
+
+.accordion-panel ul li:last-child {
+	margin-bottom: 0;
+}
+
+/* ===========================================================
+   Grid de tarjetas con icono (Servicios / Por que trabajar conmigo)
+   =========================================================== */
+
+.card-grid {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
+	gap: 2em;
+}
+
+.feature-card {
+	box-sizing: border-box;
+	flex: 0 1 calc((100% - 4em) / 3);
+	padding: 2.25em 1.5em;
+	text-align: center;
+}
+
+.feature-card .feature-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: var(--bg-elevated);
+	border: solid 1px var(--border-color);
+	color: var(--text-primary);
+	margin-bottom: 1.1em;
+	transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover .feature-icon {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+.feature-card .feature-icon svg {
+	width: 28px;
+	height: 28px;
+	stroke-width: 2;
+}
+
+.feature-card h3 {
+	margin: 0 0 0.5em 0;
+	font-size: 1.1em;
+	color: var(--text-primary);
+}
+
+.feature-card p {
+	margin: 0;
+	color: var(--text-secondary);
+	font-size: 0.95em;
+}
+
+@media screen and (max-width: 980px) {
+	.feature-card {
+		flex: 0 1 calc((100% - 2em) / 2);
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.feature-card {
+		flex: 0 1 100%;
+	}
+}
+
+/* ===========================================================
+   Header / nav
+   =========================================================== */
+
+#header {
+	background: var(--bg-secondary);
+	border-bottom: solid 1px var(--border-color);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+	color: var(--text-primary);
+}
+
+#header nav ul li a {
+	color: var(--text-primary);
+}
+
+#header nav ul li.active > a, #header nav ul li:hover > a {
+	background: rgba(201, 168, 119, 0.12);
+	color: var(--accent);
+}
+
+#header.alt {
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-primary);
+}
+
+.dropotron {
+	background: var(--bg-secondary);
+	border: solid 1px var(--border-color);
+}
+
+.dropotron.level-0:before {
+	border-bottom-color: var(--bg-secondary);
+}
+
+.dropotron > li {
+	border-top-color: var(--border-color);
+}
+
+.dropotron > li:hover > a {
+	background: var(--bg-elevated);
+	color: var(--accent);
+}
+
+/* Banner */
+#banner {
+	background-image: none;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+#banner .inner {
+	background: rgba(23, 23, 26, 0.75);
+	border: solid 1px var(--border-color);
+	color: var(--text-primary);
+}
+
+/* CTA */
+#cta {
+	background-color: var(--bg-secondary);
+	border-top: solid 1px var(--border-color);
+	color: var(--text-primary);
+}
+
+/* Footer */
+#footer {
+	background: var(--bg-secondary);
+	color: var(--text-secondary);
+	border-top: solid 1px var(--border-color);
+}
+
+ul.icons li a {
+	color: var(--text-secondary);
+}
+
+ul.icons li a:hover {
+	color: var(--accent);
+}
+
+/* Tabla */
+table.default thead {
+	background: var(--bg-elevated);
+	color: var(--text-primary);
+}
+
+table.default tbody tr {
+	border-bottom-color: var(--border-color);
+}
